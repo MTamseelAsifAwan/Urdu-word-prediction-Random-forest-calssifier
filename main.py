@@ -122,4 +122,5 @@ def test_model():
     return jsonify({"prediction": prediction[0], "similarity_score": similarity_score})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    from waitress import serve
+    serve(app, host='0.0.0.0', port=8080)
